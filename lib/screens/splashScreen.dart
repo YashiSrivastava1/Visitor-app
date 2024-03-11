@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:visitors_app/screens/employeeLogin.dart';
 import 'package:visitors_app/screens/loginPage.dart';
 import 'package:visitors_app/screens/otpScreen.dart';
 
@@ -19,7 +20,7 @@ with SingleTickerProviderStateMixin{
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(Duration(seconds: 2), (){
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=> PhoneAuth(),));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_)=> EmployeeLogin(),));
     });
   }
 

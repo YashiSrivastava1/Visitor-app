@@ -1,33 +1,14 @@
-import 'dart:io';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class PrintScreen extends StatefulWidget {
-  final String name;
-  final String hostName;
-  final String purposeOfVisit;
-  final String company;
-  final String companyAdd;
-  final String id;
-  final File? image;
-  
-
-  const PrintScreen({
-    required this.name,
-    required this.purposeOfVisit,
-    required this.image,
-    required this.hostName,
-    required this.company,
-    required this.companyAdd,
-    required this.id,
-    Key? key,
-  }) : super(key: key);
+class ExitScreen extends StatefulWidget {
+  const ExitScreen({super.key});
 
   @override
-  State<PrintScreen> createState() => _PrintScreenState();
+  State<ExitScreen> createState() => _ExitScreenState();
 }
 
-class _PrintScreenState extends State<PrintScreen> {
+class _ExitScreenState extends State<ExitScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,19 +19,16 @@ class _PrintScreenState extends State<PrintScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Visitor's Pass"),
+              Image.asset(
+                'assets/cyflogo.jpeg',
+                fit: BoxFit.contain,
+              ),
 
-// Image.asset(
+// SizedBox(
 
-// 'assets/images/cyflogo.jpeg',
+// width: 60,
 
-// fit: BoxFit.contain,
-
-// ),
-
-              SizedBox(
-                width: 60,
-              )
+// )
             ],
           ),
         ),
@@ -95,12 +73,7 @@ class _PrintScreenState extends State<PrintScreen> {
 
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(45),
-                child: widget.image != null
-                    ? Image.file(
-                        widget.image!,
-                        fit: BoxFit.cover,
-                      )
-                    : Placeholder(),
+                child: Placeholder(),
               ), // Placeholder if image is null
             ),
             SizedBox(height: 20),
@@ -109,7 +82,7 @@ class _PrintScreenState extends State<PrintScreen> {
               style: TextStyle(fontSize: 20),
             ),
             Text(
-              widget.name,
+              'gfhfhg',
               style: TextStyle(fontSize: 25),
             ),
             SizedBox(height: 20),
@@ -118,7 +91,7 @@ class _PrintScreenState extends State<PrintScreen> {
               style: TextStyle(fontSize: 20),
             ),
             Text(
-              widget.hostName,
+              "host name",
               style: TextStyle(fontSize: 25),
             ),
             SizedBox(height: 20),
@@ -126,13 +99,11 @@ class _PrintScreenState extends State<PrintScreen> {
               "Purpose of Visit",
               style: TextStyle(fontSize: 20),
             ),
-            Text(
-              widget.purposeOfVisit,
-              style: TextStyle(fontSize: 25),
-            ),
+            Text('hdhgfhg'),
           ],
         ),
       ),
     );
   }
 }
+  
